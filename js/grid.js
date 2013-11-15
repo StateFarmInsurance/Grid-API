@@ -1,3 +1,11 @@
+/*
+ * Grid Module:
+ * 
+ * Use with RequireJS to use module.  
+ * See http://requirejs.org/docs/api.html.
+ * 
+ */
+
 define(function() {
 	return { 
 		load : function() {
