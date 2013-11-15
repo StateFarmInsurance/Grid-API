@@ -1,0 +1,184 @@
+body {
+	font-family: sans-serif;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.hidden {
+	display:block;
+	visibility: hidden;
+}
+
+#main-content:after,.container:after,.row:after,#adverts:after {
+	display: table;
+	line-height: 0;
+	content: "";
+	clear: both;
+}
+
+.container {
+	box-sizing: border-box;
+	float: left;
+}
+
+.row {
+	margin-top: 3%;
+	margin-left:0;
+	line-height: 30px;
+}
+
+.row:first-child {
+	margin-top: 0;
+}
+
+.cell {
+	float: left;
+	margin-left: 3%;
+	box-sizing: border-box;
+}
+
+.cell:first-child {
+	margin-left: 0;
+}
+
+/* Credit for this technique goes to AndrŽ Lu’s (discovered) & Lea Verou (refined). */
+/* DYNAMIC CONTAINERS */
+.container:first-child:nth-last-child(1) {
+	width: 100%;
+}
+
+.container:first-child:nth-last-child(2) {
+	width: 30%;
+}
+
+.container:first-child:nth-last-child(2)  ~ .container {
+	margin-left: 3%;
+	width: 67%;
+}
+
+.container:first-child:nth-last-child(2).main {
+	width: 70%;
+}
+
+.container:first-child:nth-last-child(2).main  ~ .container {
+	margin-left: 3%;
+	width: 27%;
+}
+
+.container:first-child:nth-last-child(3) {
+	width: 25%;
+}
+
+.container:first-child:nth-last-child(3)  ~ .container:nth-child(2) {
+	margin-left: 3%;
+	width: 44%;
+}
+
+.container:first-child:nth-last-child(3)  ~ .container:last-child {
+	margin-left: 3%;
+	width: 25%;
+}
+
+/* DYNAMIC CELLS */
+.cell:first-child:nth-last-child(1) {
+	width: 100%;
+}
+
+.cell:first-child:nth-last-child(2),.cell:first-child:nth-last-child(2) 
+	~ .cell {
+	width: 48.5%;
+}
+
+.cell:first-child:nth-last-child(3),.cell:first-child:nth-last-child(3) 
+	~ .cell {
+	width: 31.3333333%;
+}
+
+.cell:first-child:nth-last-child(4),.cell:first-child:nth-last-child(4) 
+	~ .cell {
+	width: 22.75%;
+}
+
+.cell:first-child:nth-last-child(5),.cell:first-child:nth-last-child(5) 
+	~ .cell {
+	width: 17.6%;
+}
+
+.cell:first-child:nth-last-child(6),.cell:first-child:nth-last-child(6) 
+	~ .cell {
+	width: 14.16666666%;
+}
+
+@media ( max-width: 767px ) {
+}
+@media ( max-width: 767px ) {
+	.hidden {
+		display: none;
+	}
+	.cell {
+		margin-left: 0;
+		margin-top: 3%;
+		width: 100% !important;
+	}
+	.container:first-child:nth-last-child(3) {
+		width: 100%;
+	}
+	
+	.container:first-child:nth-last-child(3)  ~ .container:nth-child(2) {
+		margin-left: 0%;
+		margin-top:3%;
+		width: 100%;
+	}
+	
+	.container:first-child:nth-last-child(3)  ~ .container:last-child {
+		margin-left: 0%;
+		margin-top:3%;
+		width: 100%;
+	}	
+}
+
+/* Show Grid */
+#page-content.show-grid {
+	margin: 0 auto;
+	width: 80%;
+	border: 5px solid black;
+}
+
+.show-grid #header,.show-grid #footer {
+	text-align: center;
+	background: #eee;
+	line-height: 50px;
+}
+
+.show-grid .container {
+	background: #eee;
+	border: 1px solid #aaa;
+	text-align: center;
+	width:100%;
+	height: 100px;
+	border-radius: 8px 8px 8px 8px;
+}
+
+.show-grid #adverts .container {
+	height: 20px;
+}
+
+.show-grid .cell {
+	padding: 10px;
+	border-right: 1px solid #aaa;
+	border-bottom: 1px solid #aaa;
+	background-color: #ddd;
+	border-radius: 8px 8px 8px 8px;
+	text-align: center;
+}
+
+.show-grid .cell:first-child {
+	border-left: none;
+}
+
+.show-grid #header,.show-grid #adverts {
+	border-bottom: 5px solid #444;
+}
+.show-grid #footer {
+	border-top: 5px solid #444;
+}
+
